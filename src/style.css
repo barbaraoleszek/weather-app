@@ -1,0 +1,61 @@
+body {
+  font-family: "Zilla Slab", serif;
+  font-size: 25px;
+  color: slategray;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #fef9e7,
+    #f6fae9,
+    #eefaed,
+    #e9f9f1,
+    #e7f8f5,
+    #e6f6f7,
+    #e8f4f9,
+    #eaf2f8
+  );
+  background-repeat: no-repeat;
+}
+.container {
+  margin-top: 30px;
+}
+.city {
+  font-size: 30px;
+  text-transform: capitalize;
+}
+.day {
+  text-align: right;
+}
+.icon {
+  text-align: right;
+}
+hr {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.this-day-date {
+  font-size: 20px;
+}
+.this-day-temp {
+  font-size: 20px;
+}
+.this-day-conditions {
+  font-size: 20px;
+}
+.this-day-icon {
+  font-size: 100px;
+}
+@media (min-width: 530px) {
+  .moved-icon {
+    margin-right: 100px;
+  }
+  .weather-now {
+    margin-left: 50px;
+  }
+  .fifth {
+    margin-bottom: 30px;
+  }
+}
+.scale {
+  text-decoration: none;
+  color: slategray;
+}

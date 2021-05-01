@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link href="src/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&family=Zilla+Slab:wght@300;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row p-2 justify-content-center">
+        <div class="col col-md-4">
+          <form id="search-form">
+            <input
+              type="search"
+              id="search"
+              class="form-control"
+              placeholder="Choose city..."
+            />
+          </form>
+        </div>
+      </div>
+      <div class="row p-2 justify-content-center">
+        <div class="col p-2 col-md-3">
+          <div class="pt-2 text-center weather-now city" id="currentCity">
+          </div>
+          <div
+            class="text-center weather-now this-day-date"
+            id="day-date"
+          ></div>
+          <div class="text-center weather-now this-day-temp">
+            <span id="day-temp"></span>°<!--/<span id="night-temp">-3</span>°--><a
+              href="#"
+              class="scale"
+              id="celsius"
+            >
+              C</a
+            >|<a href="#" class="scale" id="fahrenheit">F</a>
+          </div>
+          <div class="text-center weather-now this-day-conditions">rainy</div>
+        </div>
+        <div
+          class="col col-md-3 p-2 align-self-center text-center this-day-icon"
+        >
+          <span class="moved-icon">🌨</span>
+        </div>
+      </div>
+      <div class="row p-2 justify-content-center first">
+        <div class="col p-2 col-sm-2 day">Monday</div>
+        <div class="col p-2 col-sm-2 icon">🌧</div>
+        <div class="col p-2 col-sm-2 temperature">12°/3°</div>
+      </div>
+      <div class="row p-2 justify-content-center second">
+        <div class="col p-2 col-sm-2 day">Monday</div>
+        <div class="col p-2 col-sm-2 icon">🌧</div>
+        <div class="col p-2 col-sm-2 temperature">12°/3°</div>
+      </div>
+      <div class="row p-2 justify-content-center third">
+        <div class="col p-2 col-sm-2 day">Monday</div>
+        <div class="col p-2 col-sm-2 icon">🌧</div>
+        <div class="col p-2 col-sm-2 temperature">12°/3°</div>
+      </div>
+      <div class="row p-2 justify-content-center fourth">
+        <div class="col p-2 col-sm-2 day">Monday</div>
+        <div class="col p-2 col-sm-2 icon">🌧</div>
+        <div class="col p-2 col-sm-2 temperature">12°/3°</div>
+      </div>
+      <div class="row p-2 justify-content-center fifth">
+        <div class="col p-2 col-sm-2 day">Monday</div>
+        <div class="col p-2 col-sm-2 icon">🌧</div>
+        <div class="col p-2 col-sm-2 temperature">12°/3°</div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
