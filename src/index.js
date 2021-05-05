@@ -1,6 +1,11 @@
 let apiKey = "6c4290abd5648abaf091c539d72478db";
 let currentLocation = document.querySelector("#currentCity");
 let spanDayTemp = document.querySelector("#day-temp");
+let getWind = document.querySelector("#get-wind");
+let getHumidity = document.querySelector("#get-humidity");
+let weatherDescription = document.querySelector("#weather-description");
+let mainIcon = document.querySelector("#main-icon");
+
 // Date and time
 
 let now = new Date();
@@ -24,6 +29,10 @@ function getTempInLocation(response) {
 
   currentLocation.innerText = `${response.data.name}`; 
   spanDayTemp.innerText = Math.round(response.data.main.temp);
+  weatherDescription.innerText = response.data.weather[0].description;
+  mainIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png" />`;
+  getWind.innerText = response.data.wind.speed;
+ getHumidity.innerText = response.data.main.humidity;
 }
 
   navigator.geolocation.getCurrentPosition(handlePosition);
@@ -49,20 +58,22 @@ searchForm.addEventListener("submit", handleKeyword);
 
 function getTemp(city) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${newCity.value}&units=metric&appid=${apiKey}`;
-  axios.get(url).then(showDayTemp);
+  axios.get(url).then(showDayInfo);
 }
 
-function showDayTemp(response) {
+function showDayInfo(response) {
   let spanDayTemp = document.querySelector("#day-temp");
   spanDayTemp.innerText = Math.round(response.data.main.temp);
+  weatherDescription.innerText = response.data.weather[0].description;
+  mainIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png" />`;
+ getWind.innerText = response.data.wind.speed;
+ getHumidity.innerText = response.data.main.humidity;
+
  
-//  return Promise.resolve(response);
+
 
 }
-// function showNightTemp(response) {
- // let spanNightTemp = document.querySelector("#night-temp");
- // spanNightTemp.innerText = Math.round(response.data.main.temp_min);
-// }
+
 
 // Celsius to Fahrenheit
 

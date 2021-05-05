@@ -50,14 +50,14 @@
               C</a
             >|<a href="#" class="scale" id="fahrenheit">F</a>
           </div>
-          <div class="text-center weather-now this-day-conditions">rainy</div>
+          <div class="text-center weather-now this-day-conditions" id="weather-description"></div>
         </div>
         <div
           class="col col-md-3 p-2 align-self-center text-center this-day-icon"
         >
-          <div class="text-center weather-now moved-icon main-icon">🌨</div>
-          <div class="text-center weather-now this-day-conditions moved-icon">wind</div>
-            <div class="text-center weather-now this-day-conditions moved-icon">predicitation</div>
+          <div class="text-center weather-now moved-icon main-icon" id="main-icon"></div>
+          <div class="text-center weather-now this-day-conditions moved-icon">wind: <span id="get-wind"></span>m/s</div>
+            <div class="text-center weather-now this-day-conditions moved-icon">humidity: <span id="get-humidity"></span>%</div>
           </div>
         </div>
       </div>
