@@ -6,6 +6,7 @@ let getHumidity = document.querySelector("#get-humidity");
 let weatherDescription = document.querySelector("#weather-description");
 let mainIcon = document.querySelector("#main-icon");
 
+
 // Date and time
 
 let now = new Date();
@@ -29,8 +30,9 @@ function getTempInLocation(response) {
 
   currentLocation.innerText = `${response.data.name}`; 
   spanDayTemp.innerText = Math.round(response.data.main.temp);
+  celciusTemperature = response.data.main.temp;
   weatherDescription.innerText = response.data.weather[0].description;
-  mainIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png" />`;
+  mainIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png" style="width: 82px;"/>`;
   getWind.innerText = response.data.wind.speed;
  getHumidity.innerText = response.data.main.humidity;
 }
@@ -62,12 +64,13 @@ function getTemp(city) {
 }
 
 function showDayInfo(response) {
-  let spanDayTemp = document.querySelector("#day-temp");
+  
   spanDayTemp.innerText = Math.round(response.data.main.temp);
   weatherDescription.innerText = response.data.weather[0].description;
+  celciusTemperature = response.data.main.temp;
   mainIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png" />`;
- getWind.innerText = response.data.wind.speed;
- getHumidity.innerText = response.data.main.humidity;
+  getWind.innerText = response.data.wind.speed;
+  getHumidity.innerText = response.data.main.humidity;
 
  
 
@@ -78,20 +81,20 @@ function showDayInfo(response) {
 // Celsius to Fahrenheit
 
 function changeToCelsius() {
-  dayTemp.innerText = `${Math.round((dayTemp.innerText - 32) / 1.8)}`;
+ spanDayTemp.innerText = Math.round(celciusTemperature);
 
-//  nightTemp.innerText = `${Math.round((nightTemp.innerText - 32) / 1.8)}`;
+
 }
 
 function changetoFahrenheit() {
-  dayTemp.innerText = `${Math.round(dayTemp.innerText * 1.8 + 32)}`;
+  spanDayTemp.innerText = `${Math.round(celciusTemperature * 1.8 + 32)}`;
 
-//  nightTemp.innerText = `${Math.round(nightTemp.innerText * 1.8 + 32)}`;
+
 }
 
-let dayTemp = document.querySelector("#day-temp");
+// let dayTemp = document.querySelector("#day-temp");
 
-let nightTemp = document.querySelector("#night-temp");
+let celciusTemperature = null;
 
 let celcius = document.querySelector("#celsius");
 celcius.addEventListener("click", changeToCelsius);
