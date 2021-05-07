@@ -5,6 +5,7 @@ let getWind = document.querySelector("#get-wind");
 let getHumidity = document.querySelector("#get-humidity");
 let weatherDescription = document.querySelector("#weather-description");
 let mainIcon = document.querySelector("#main-icon");
+let daysForForecast = []
 
 
 // Date and time
@@ -76,28 +77,23 @@ function showDayInfo(response) {
 
 
 }
+// Forecast
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = "";
+  forecastHTML = forecastHTML + `<div class="row p-2 justify-content-center first">
+        <div class="col p-2 col-sm-2 day">Monday</div>
+        <div class="col p-2 col-sm-2 icon"><img src="http://openweathermap.org/img/wn/50d@2x.png" style="width: 45px;"/></div>
+        <div class="col p-2 col-sm-2 temperature">12°/3°</div>
+      </div>`;
 
-// Celsius to Fahrenheit
-
-function changeToCelsius() {
- spanDayTemp.innerText = Math.round(celciusTemperature);
-
-
+      forecastElement.innerHTML = forecastHTML;
 }
 
-function changetoFahrenheit() {
-  spanDayTemp.innerText = `${Math.round(celciusTemperature * 1.8 + 32)}`;
 
 
-}
+displayForecast();
 
-// let dayTemp = document.querySelector("#day-temp");
 
-let celciusTemperature = null;
 
-let celcius = document.querySelector("#celsius");
-celcius.addEventListener("click", changeToCelsius);
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", changetoFahrenheit);
